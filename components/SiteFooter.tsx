@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 export function SiteFooter() {
@@ -8,8 +9,14 @@ export function SiteFooter() {
     <footer className="border-t border-line-soft mt-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid gap-8 sm:grid-cols-3">
         <div>
-          <p className="font-heading font-bold text-frost text-lg">{SITE.brand}</p>
-          <p className="text-slate text-sm mt-2">{SITE.tagline}</p>
+          <Image
+            src="/logo-full.png"
+            alt={SITE.brand}
+            width={918}
+            height={400}
+            className="h-16 w-auto"
+          />
+          <p className="text-slate text-sm mt-3">{SITE.tagline}</p>
           <p className="text-slate-dim text-sm mt-1">{SITE.address}</p>
         </div>
 

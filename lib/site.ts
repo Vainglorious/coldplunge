@@ -7,17 +7,17 @@
  */
 
 export const SITE = {
-  // PLACEHOLDER — real business name / tagline / domain to come.
-  brand: "Northwind Cold Plunge",
-  brandShort: "Northwind",
+  brand: "Calgary Cold Plunge",
+  brandShort: "Calgary Cold Plunge",
   tagline: "Cold therapy, built for Calgary.",
+  domain: "calgarycoldplunge.ca",
   city: "Calgary",
   region: "Alberta",
   country: "Canada",
 
   // Contact details shown on the site. The cell that RECEIVES lead texts lives
-  // in env as ADMIN_PHONE (set separately). `email` is still a PLACEHOLDER.
-  email: "hello@example.com",
+  // in env as ADMIN_PHONE (set separately). NOTE: confirm this mailbox exists.
+  email: "hello@calgarycoldplunge.ca",
   phoneDisplay: "(587) 436-4125",
   address: "23, 2015 32 Ave NE, Calgary, AB T2E 6Z3",
 

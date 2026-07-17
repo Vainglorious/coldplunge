@@ -32,3 +32,6 @@ next-env.d.ts
 # full-res photo originals — kept locally as source; the web-optimized copies
 # that actually ship live in public/images/
 /assets/
+
+# raw logo source — the optimized transparent versions ship from public/
+/coldplungelogo.png
