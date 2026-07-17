@@ -51,10 +51,15 @@ export default function ContactPage() {
                   {SITE.email}
                 </a>
               </li>
-              <li className="text-mist">{SITE.phoneDisplay}</li>
-              <li className="text-slate-dim">
-                {SITE.city}, {SITE.region}
+              <li>
+                <a
+                  href={`tel:+1${SITE.phoneDisplay.replace(/\D/g, "")}`}
+                  className="text-mist hover:text-frost transition-colors"
+                >
+                  {SITE.phoneDisplay}
+                </a>
               </li>
+              <li className="text-slate-dim">{SITE.address}</li>
             </ul>
           </div>
 

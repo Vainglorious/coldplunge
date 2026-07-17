@@ -15,10 +15,11 @@ export const SITE = {
   region: "Alberta",
   country: "Canada",
 
-  // PLACEHOLDER — the address/number leads should reach. `email` is shown on the
-  // site; `adminPhone` (the cell that gets lead texts) lives in env as ADMIN_PHONE.
+  // Contact details shown on the site. The cell that RECEIVES lead texts lives
+  // in env as ADMIN_PHONE (set separately). `email` is still a PLACEHOLDER.
   email: "hello@example.com",
-  phoneDisplay: "(403) 000-0000",
+  phoneDisplay: "(587) 436-4125",
+  address: "23, 2015 32 Ave NE, Calgary, AB T2E 6Z3",
 
   // Rounded headline price used across the site.
   price: "$4,000",

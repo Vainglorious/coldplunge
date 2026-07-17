@@ -10,9 +10,7 @@ export function SiteFooter() {
         <div>
           <p className="font-heading font-bold text-frost text-lg">{SITE.brand}</p>
           <p className="text-slate text-sm mt-2">{SITE.tagline}</p>
-          <p className="text-slate-dim text-sm mt-1">
-            {SITE.city}, {SITE.region}
-          </p>
+          <p className="text-slate-dim text-sm mt-1">{SITE.address}</p>
         </div>
 
         <div>
