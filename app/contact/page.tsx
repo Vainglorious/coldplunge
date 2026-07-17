@@ -22,7 +22,7 @@ export default function ContactPage() {
         <PageHeader
           eyebrow="Contact"
           title="Let's get you plunging."
-          intro="Fill this out and it comes straight to us — we'll get back to you quickly. Leave a phone number and tick the box if you'd like a text confirmation."
+          intro="Fill this out and it comes straight to us — we'll get back to you quickly, and you'll get a text confirming we received it."
         />
       </Container>
 
@@ -84,7 +84,7 @@ function IceTick() {
       <path
         d="M4 10.5l4 4 8-9"
         fill="none"
-        stroke="#6fd3e8"
+        stroke="#5e91b5"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

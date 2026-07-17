@@ -9,13 +9,20 @@ export function SiteFooter() {
     <footer className="border-t border-line-soft mt-24">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 grid gap-8 sm:grid-cols-3">
         <div>
-          <Image
-            src="/logo-full.png"
-            alt={SITE.brand}
-            width={918}
-            height={400}
-            className="h-16 w-auto"
-          />
+          <div className="flex items-center gap-3">
+            <span className="logo-chip w-14 h-14 p-1.5">
+              <Image
+                src="/logo-mark.png"
+                alt={SITE.brand}
+                width={481}
+                height={512}
+                className="w-full h-full object-contain"
+              />
+            </span>
+            <span className="font-heading font-extrabold text-frost uppercase tracking-wide leading-tight">
+              Calgary<br />Cold Plunge
+            </span>
+          </div>
           <p className="text-slate text-sm mt-3">{SITE.tagline}</p>
           <p className="text-slate-dim text-sm mt-1">{SITE.address}</p>
         </div>

@@ -105,7 +105,7 @@ export default function Home() {
               {PRODUCT.name}
             </h2>
             <p className="text-mist mt-5 leading-relaxed">
-              One tub, everything you need. A {PRODUCT.seats} plunge with a
+              One tub, everything you need. Roomy enough for one or two, with a
               seamless stainless liner that stays clean, a red-cedar shell that
               looks the part, and an insulated lid that keeps the cold in when
               you&apos;re done.
@@ -149,7 +149,7 @@ function IceTick() {
       <path
         d="M4 10.5l4 4 8-9"
         fill="none"
-        stroke="#6fd3e8"
+        stroke="#5e91b5"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

@@ -37,7 +37,7 @@ export function CtaBand({
           className="absolute inset-0 opacity-70"
           style={{
             background:
-              "radial-gradient(circle at 15% 20%, rgba(111,211,232,0.10), transparent 55%), radial-gradient(circle at 90% 90%, rgba(43,110,127,0.12), transparent 55%)",
+              "radial-gradient(circle at 15% 20%, rgba(94,145,181,0.12), transparent 55%), radial-gradient(circle at 90% 90%, rgba(44,109,158,0.14), transparent 55%)",
           }}
         />
         <div className="relative px-6 sm:px-12 py-12 sm:py-16 text-center">

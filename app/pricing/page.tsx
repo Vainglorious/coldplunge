@@ -50,7 +50,7 @@ export default function PricingPage() {
               className="absolute inset-0 opacity-60"
               style={{
                 background:
-                  "radial-gradient(circle at 20% 0%, rgba(111,211,232,0.10), transparent 60%)",
+                  "radial-gradient(circle at 20% 0%, rgba(94,145,181,0.14), transparent 60%)",
               }}
             />
             <div className="relative">
@@ -143,7 +143,7 @@ function IceTick() {
       <path
         d="M4 10.5l4 4 8-9"
         fill="none"
-        stroke="#6fd3e8"
+        stroke="#5e91b5"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"

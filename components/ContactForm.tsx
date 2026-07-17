@@ -21,7 +21,6 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
-  const [smsConsent, setSmsConsent] = useState(false);
 
   function clearError(field: keyof ValidationErrors) {
     setFieldErrors((e) => ({ ...e, [field]: undefined }));
@@ -45,9 +44,10 @@ export function ContactForm() {
         body: JSON.stringify({
           name: name.trim(),
           email: email.trim(),
-          phone: phone ? normalizePhone(phone) : "",
+          phone: normalizePhone(phone),
           message: message.trim(),
-          smsConsent,
+          // Submitting the form with a phone number IS the consent to text.
+          smsConsent: true,
         }),
       });
       const data = (await res.json()) as {
@@ -69,8 +69,6 @@ export function ContactForm() {
   }
 
   // Consent is only meaningful once a phone number is entered.
-  const phoneEntered = phone.trim().length > 0;
-
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-6">
       <Field
@@ -97,7 +95,7 @@ export function ContactForm() {
         placeholder="you@example.com"
       />
       <Field
-        label="Phone (optional)"
+        label="Phone"
         type="tel"
         value={phone}
         onChange={(v) => {
@@ -132,32 +130,6 @@ export function ContactForm() {
         )}
       </label>
 
-      {/* SMS consent — the lead only gets texted if this is ticked AND a phone
-          number was given. Unchecked by default for CASL compliance. */}
-      <label
-        className={[
-          "flex items-start gap-3 p-4 rounded-lg border cursor-pointer transition-colors",
-          smsConsent
-            ? "border-ice-dim bg-card-hover"
-            : "border-line bg-bg-soft hover:border-line",
-          phoneEntered ? "" : "opacity-60",
-        ].join(" ")}
-      >
-        <input
-          type="checkbox"
-          checked={smsConsent}
-          onChange={(e) => setSmsConsent(e.target.checked)}
-          className="mt-1 h-4 w-4 accent-[color:var(--color-ice)]"
-        />
-        <span className="text-sm text-mist">
-          I want to receive a text message.
-          <span className="block text-slate-dim mt-0.5">
-            We&apos;ll send a confirmation to your phone. Standard rates may
-            apply; reply STOP anytime.
-          </span>
-        </span>
-      </label>
-
       {formError && (
         <p className="text-cedar font-medium" role="alert">
           {formError}
@@ -171,6 +143,11 @@ export function ContactForm() {
       >
         {status === "submitting" ? "Sending…" : "Send message"}
       </button>
+
+      <p className="text-sm text-slate-dim">
+        By sending this, you agree to receive a text confirmation at the number
+        above. Standard message rates may apply; reply STOP to opt out anytime.
+      </p>
     </form>
   );
 }

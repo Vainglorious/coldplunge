@@ -14,15 +14,17 @@ export function SiteHeader() {
     <header className="sticky top-0 z-30 backdrop-blur-md bg-bg/80 border-b border-line-soft">
       <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <Image
-            src="/logo-emblem.png"
-            alt=""
-            width={218}
-            height={256}
-            priority
-            className="h-9 w-auto"
-          />
-          <span className="font-heading font-bold text-frost tracking-tight text-base sm:text-lg">
+          <span className="logo-chip w-10 h-10 p-1">
+            <Image
+              src="/logo-mark.png"
+              alt=""
+              width={481}
+              height={512}
+              priority
+              className="w-full h-full object-contain"
+            />
+          </span>
+          <span className="font-heading font-extrabold text-frost uppercase tracking-wide text-sm sm:text-base leading-none">
             {SITE.brandShort}
           </span>
         </Link>

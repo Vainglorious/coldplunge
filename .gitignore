@@ -35,3 +35,5 @@ next-env.d.ts
 
 # raw logo source — the optimized transparent versions ship from public/
 /coldplungelogo.png
+/logo.png
+/coldplunge.png

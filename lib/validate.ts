@@ -77,7 +77,8 @@ export function validateContact(input: {
   if (n) errors.name = n;
   const e = validateEmail(input.email);
   if (e) errors.email = e;
-  const p = validatePhone(input.phone);
+  // Phone is required — everyone who submits gets a confirmation text.
+  const p = validatePhone(input.phone, true);
   if (p) errors.phone = p;
   const m = validateMessage(input.message);
   if (m) errors.message = m;

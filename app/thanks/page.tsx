@@ -18,7 +18,7 @@ export default function ThanksPage() {
               <path
                 d="M4 10.5l4 4 8-9"
                 fill="none"
-                stroke="#6fd3e8"
+                stroke="#5e91b5"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

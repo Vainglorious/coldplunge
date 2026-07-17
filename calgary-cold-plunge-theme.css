@@ -1,0 +1,92 @@
+/* Calgary Cold Plunge website theme */
+:root {
+  --ccp-navy: #1B2C38;
+  --ccp-deep: #0B1822;
+  --ccp-blue: #2C6D9E;
+  --ccp-ice: #5E91B5;
+  --ccp-cedar: #9D5B2A;
+  --ccp-cedar-dark: #6F3015;
+  --ccp-maple: #751516;
+  --ccp-steel: #ABB4BA;
+  --ccp-frost: #F7F9FA;
+  --ccp-white: #FFFFFF;
+
+  --ccp-font-display: "Inter Display", "Inter", Arial, sans-serif;
+  --ccp-font-body: "Inter", Arial, sans-serif;
+
+  --ccp-radius-sm: 8px;
+  --ccp-radius-md: 14px;
+  --ccp-shadow-card: 0 14px 38px rgba(11, 24, 34, 0.12);
+}
+
+body {
+  margin: 0;
+  background: var(--ccp-frost);
+  color: var(--ccp-navy);
+  font-family: var(--ccp-font-body);
+  font-size: 16px;
+  line-height: 1.625;
+}
+
+h1, h2, h3, .display-text {
+  font-family: var(--ccp-font-display);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: 0.035em;
+}
+
+h1, .display-text { text-transform: uppercase; }
+
+a { color: var(--ccp-blue); }
+a:hover { color: var(--ccp-cedar-dark); }
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--ccp-radius-sm);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 160ms ease;
+}
+
+.button-primary {
+  border: 1px solid var(--ccp-blue);
+  background: var(--ccp-blue);
+  color: var(--ccp-white);
+}
+.button-primary:hover {
+  border-color: var(--ccp-navy);
+  background: var(--ccp-navy);
+  color: var(--ccp-white);
+}
+
+.button-secondary {
+  border: 1px solid var(--ccp-steel);
+  background: transparent;
+  color: var(--ccp-navy);
+}
+.button-secondary:hover {
+  border-color: var(--ccp-blue);
+  color: var(--ccp-blue);
+}
+
+.card {
+  border: 1px solid #DCE3E7;
+  border-radius: var(--ccp-radius-md);
+  background: var(--ccp-white);
+  box-shadow: var(--ccp-shadow-card);
+}
+
+.dark-section {
+  background: var(--ccp-navy);
+  color: var(--ccp-white);
+}
+
+/* Use Maple Red only for small details, not large backgrounds. */
+.canadian-accent { color: var(--ccp-maple); }
