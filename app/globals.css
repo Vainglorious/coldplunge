@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  /* Deep, cold, near-black blues */
+  --color-bg: #070d13;
+  --color-bg-soft: #0b141d;
+  --color-card: #0e1922;
+  --color-card-hover: #132330;
+  --color-line: #20323f;
+  --color-line-soft: #172530;
+
+  /* Ice — the primary accent */
+  --color-ice: #6fd3e8;
+  --color-ice-bright: #a7e7f5;
+  --color-ice-dim: #3f8da3;
+
+  /* Deep steel/aegean support tone */
+  --color-steel: #2b6e7f;
+  --color-steel-deep: #1b4653;
+
+  /* Cedar — warm accent nodding to the wood exterior */
+  --color-cedar: #c88a52;
+  --color-cedar-dim: #8a5c34;
+
+  /* Neutrals / text */
+  --color-frost: #eaf4f7;
+  --color-mist: #c2d2da;
+  --color-slate: #8ba0ab;
+  --color-slate-dim: #5f727c;
+  --color-ink: #070d13;
+}
+
+@theme inline {
+  --color-bg: var(--color-bg);
+  --color-bg-soft: var(--color-bg-soft);
+  --color-card: var(--color-card);
+  --color-card-hover: var(--color-card-hover);
+  --color-line: var(--color-line);
+  --color-line-soft: var(--color-line-soft);
+  --color-ice: var(--color-ice);
+  --color-ice-bright: var(--color-ice-bright);
+  --color-ice-dim: var(--color-ice-dim);
+  --color-steel: var(--color-steel);
+  --color-steel-deep: var(--color-steel-deep);
+  --color-cedar: var(--color-cedar);
+  --color-cedar-dim: var(--color-cedar-dim);
+  --color-frost: var(--color-frost);
+  --color-mist: var(--color-mist);
+  --color-slate: var(--color-slate);
+  --color-slate-dim: var(--color-slate-dim);
+  --color-ink: var(--color-ink);
+  --font-heading: var(--font-sora);
+  --font-body: var(--font-inter);
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: var(--color-mist);
+}
+
+body {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faint cold glow washes in the background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: radial-gradient(
+      circle at 20% 0%,
+      rgba(111, 211, 232, 0.06),
+      transparent 55%
+    ),
+    radial-gradient(circle at 85% 100%, rgba(43, 110, 127, 0.07), transparent 55%);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-sora), system-ui, sans-serif;
+  color: var(--color-frost);
+  letter-spacing: -0.01em;
+}
+
+/* Utility surface + effects */
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-line);
+  border-radius: 0.9rem;
+}
+
+.frost-shadow {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(111, 211, 232, 0.06);
+}
+
+.ice-glow {
+  box-shadow: 0 0 28px rgba(111, 211, 232, 0.18);
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-line),
+    transparent
+  );
+}
+
+.hairline {
+  border-color: var(--color-line);
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-sora), sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: var(--color-ice);
+  color: var(--color-ink);
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.6rem;
+  transition: background-color 0.18s ease, transform 0.18s ease;
+}
+.btn-primary:hover {
+  background: var(--color-ice-bright);
+}
+
+.btn-ghost {
+  display: inline-block;
+  font-family: var(--font-sora), sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-frost);
+  padding: 0.85rem 1.75rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--color-line);
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+.btn-ghost:hover {
+  border-color: var(--color-ice-dim);
+  background: var(--color-card-hover);
+}
+
+.eyebrow {
+  font-family: var(--font-sora), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-ice-dim);
+}
+
+/* Form fields */
+input,
+textarea {
+  font-family: var(--font-inter), sans-serif;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-slate-dim);
+}
+
+a {
+  color: inherit;
+}
