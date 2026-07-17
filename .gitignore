@@ -28,3 +28,7 @@ next-env.d.ts
 
 # stray empty git repo left in this subdir before the project existed
 /coldplunge/
+
+# full-res photo originals — kept locally as source; the web-optimized copies
+# that actually ship live in public/images/
+/assets/
