@@ -1,6 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-import { SITE } from "@/lib/site";
 
 const NAV = [
   { href: "/why-cold-plunge", label: "Why Cold Plunge" },
@@ -11,37 +9,32 @@ const NAV = [
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 backdrop-blur-md bg-bg/80 border-b border-line-soft">
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <span className="logo-chip w-10 h-10 p-1">
-            <Image
-              src="/logo-mark.png"
-              alt=""
-              width={481}
-              height={512}
-              priority
-              className="w-full h-full object-contain"
-            />
-          </span>
-          <span className="font-heading font-extrabold text-frost uppercase tracking-wide text-sm sm:text-base leading-none">
-            {SITE.brandShort}
+    <header className="sticky top-3 z-30 px-3 sm:px-5">
+      <div className="glass max-w-6xl mx-auto pl-5 sm:pl-7 pr-3 sm:pr-4 h-16 rounded-2xl border border-limestone/10 flex items-center justify-between gap-4">
+        <Link
+          href="/"
+          className="shrink-0"
+          aria-label="Calgary Cold Plunge — home"
+        >
+          <span className="font-heading font-semibold text-limestone text-sm sm:text-base uppercase tracking-[0.08em] leading-none">
+            Calgary Cold Plunge
+            <span className="text-champagne">.</span>
           </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="font-heading text-sm font-medium text-slate hover:text-frost transition-colors"
+              className="font-mono text-[0.7rem] uppercase tracking-[0.16em] text-muted hover:text-limestone transition-colors"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
-        <Link href="/contact" className="btn-primary text-sm !py-2 !px-4">
+        <Link href="/contact" className="btn-primary !py-2.5 !px-5 text-sm">
           Get Yours
         </Link>
       </div>

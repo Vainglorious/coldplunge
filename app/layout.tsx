@@ -1,20 +1,30 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Archivo, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/lib/site";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  axes: ["wdth"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument",
+  subsets: ["latin"],
+  weight: "400",
+  style: ["normal", "italic"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
-const title = `${SITE.brand} — Cold Plunge in ${SITE.city}`;
-const description = `A cedar-and-steel cold plunge with a built-in chiller, sold in ${SITE.city}. Holds your temperature year-round — no hauling ice. ${SITE.price} ${SITE.priceNote}.`;
+const title = `${SITE.brand} — Luxury Cold Plunge in ${SITE.city}`;
+const description = `A cedar-and-stainless cold plunge with a built-in chiller, made for Canadian winters. Holds your temperature year-round — no hauling ice. ${SITE.price} ${SITE.priceNote}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -38,7 +48,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0b1822",
+  themeColor: "#0d0d0d",
   colorScheme: "dark",
 };
 
@@ -48,15 +58,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} h-full antialiased`}
+      className={`${archivo.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col relative">
-        <div className="relative z-10 flex flex-col flex-1">
-          <SiteHeader />
-          <div className="flex-1">{children}</div>
-          <SiteFooter />
-        </div>
-      </body>
+      <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
 }

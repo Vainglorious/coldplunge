@@ -1,125 +1,204 @@
 @import "tailwindcss";
 
 /*
- * Theme C — dark, using the Calgary Cold Plunge brand palette.
- * Alpine Navy base, Glacier Blue actions, Ice Blue accents, cedar + maple details.
+ * Calgary Cold Plunge — luxury identity.
+ * Luxury architecture meets Scandinavian wellness: matte charcoal foundations,
+ * warm stone neutrals, burnished bronze accents. Never saturated blue.
  */
 :root {
-  /* Alpine Navy base, darkened for a deep background */
-  --color-bg: #0b1822;
-  --color-bg-soft: #0e1e29;
-  --color-card: #12242f;
-  --color-card-hover: #17303d;
-  --color-line: #223543;
-  --color-line-soft: #16262f;
+  /* Primary — dark foundations */
+  --color-ink: #0d0d0d; /* Charcoal Black — page background */
+  --color-graphite: #1c1c1c; /* Deep Graphite — raised surfaces */
+  --color-graphite-soft: #161616; /* derived intermediate surface */
+  --color-forest: #243327; /* Deep Evergreen — quiet accent surface */
 
-  /* Ice Blue — accents, eyebrows, links, checkmarks (readable on dark) */
-  --color-ice: #5e91b5;
-  --color-ice-bright: #8fbad8;
-  --color-ice-dim: #3f6e88;
+  /* Warm neutrals — light rhythm sections + primary text on dark */
+  --color-limestone: #f7f5f2;
+  --color-sand: #ece7df; /* Natural Linen */
+  --color-stone: #d6d0c6; /* Warm Concrete */
 
-  /* Glacier Blue — primary calls to action */
-  --color-glacier: #2c6d9e;
-  --color-glacier-bright: #3a83b9;
+  /* Accents — use sparingly, for premium moments */
+  --color-bronze: #b28756; /* Burnished Bronze */
+  --color-copper: #8a5b37; /* Cedar Brown — deeper bronze, hovers */
+  --color-champagne: #d3b37a; /* Champagne */
 
-  /* Cedar + maple — warm/Canadian accents */
-  --color-cedar: #b67a45;
-  --color-cedar-dim: #8a5c34;
-  --color-maple: #b0474a;
+  /* Secondary accents — desaturated cool, small doses only */
+  --color-glacial: #dce8ec;
+  --color-icefog: #edf5f8;
+  --color-slateblue: #5e7485;
 
-  /* Neutrals / text */
-  --color-frost: #eaf2f6;
-  --color-mist: #c4d3db;
-  --color-slate: #8aa0ac;
-  --color-slate-dim: #5f727c;
-  --color-steel: #abb4ba;
-  --color-ink: #0b1822;
+  /* Warm text + hairlines (derived from the neutral scale) */
+  --color-body: #b3aa9b; /* secondary text on dark */
+  --color-muted: #8a8274; /* tertiary text on dark */
+  --color-faint: #615b50; /* captions, fine print on dark */
+  --color-body-light: #55503f; /* secondary text on light sections */
+  --color-muted-light: #7d7666; /* tertiary text on light sections */
+  --color-line: #2d2a25; /* hairline on dark */
+  --color-line-soft: #201e1a; /* faintest hairline on dark */
+  --color-line-light: #ddd5c7; /* hairline on light sections */
 }
 
 @theme inline {
-  --color-bg: var(--color-bg);
-  --color-bg-soft: var(--color-bg-soft);
-  --color-card: var(--color-card);
-  --color-card-hover: var(--color-card-hover);
+  --color-ink: var(--color-ink);
+  --color-graphite: var(--color-graphite);
+  --color-graphite-soft: var(--color-graphite-soft);
+  --color-forest: var(--color-forest);
+  --color-limestone: var(--color-limestone);
+  --color-sand: var(--color-sand);
+  --color-stone: var(--color-stone);
+  --color-bronze: var(--color-bronze);
+  --color-copper: var(--color-copper);
+  --color-champagne: var(--color-champagne);
+  --color-glacial: var(--color-glacial);
+  --color-icefog: var(--color-icefog);
+  --color-slateblue: var(--color-slateblue);
+  --color-body: var(--color-body);
+  --color-muted: var(--color-muted);
+  --color-faint: var(--color-faint);
+  --color-body-light: var(--color-body-light);
+  --color-muted-light: var(--color-muted-light);
   --color-line: var(--color-line);
   --color-line-soft: var(--color-line-soft);
-  --color-ice: var(--color-ice);
-  --color-ice-bright: var(--color-ice-bright);
-  --color-ice-dim: var(--color-ice-dim);
-  --color-glacier: var(--color-glacier);
-  --color-glacier-bright: var(--color-glacier-bright);
-  --color-cedar: var(--color-cedar);
-  --color-cedar-dim: var(--color-cedar-dim);
-  --color-maple: var(--color-maple);
-  --color-frost: var(--color-frost);
-  --color-mist: var(--color-mist);
-  --color-slate: var(--color-slate);
-  --color-slate-dim: var(--color-slate-dim);
-  --color-steel: var(--color-steel);
-  --color-ink: var(--color-ink);
-  --font-heading: var(--font-inter);
-  --font-body: var(--font-inter);
+  --color-line-light: var(--color-line-light);
+  --font-heading: var(--font-archivo);
+  --font-body: var(--font-archivo);
+  --font-display: var(--font-instrument);
+  --font-mono: var(--font-geist-mono);
 }
 
 html,
 body {
-  background: var(--color-bg);
-  color: var(--color-mist);
+  background: var(--color-ink);
+  color: var(--color-body);
 }
 
 body {
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-archivo), system-ui, -apple-system, sans-serif;
   font-size: 1.0625rem;
-  line-height: 1.65;
+  line-height: 1.6;
+  letter-spacing: -0.006em;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Faint cold glow washes in the background */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: radial-gradient(
-      circle at 20% 0%,
-      rgba(94, 145, 181, 0.08),
-      transparent 55%
-    ),
-    radial-gradient(circle at 85% 100%, rgba(44, 109, 158, 0.09), transparent 55%);
+::selection {
+  background: rgba(165, 122, 69, 0.4);
+  color: var(--color-limestone);
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-champagne);
+  outline-offset: 3px;
+}
+
+/*
+ * Typography — two display voices plus mono micro-labels.
+ * .display-serif: Instrument Serif, sentence case, for emotional statements.
+ *   Weight must stay 400 — Instrument Serif has no bold cut, anything
+ *   heavier renders as muddy faux bold.
+ * .display-grot: Archivo expanded, for structural headlines and numerals.
+ */
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-inter), system-ui, sans-serif;
-  color: var(--color-frost);
-  font-weight: 800;
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 106%;
+  color: var(--color-limestone);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
 }
 
-/* Brand voice: uppercase, letter-spaced display headings */
-h1,
-h2 {
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  line-height: 1.05;
+/* Guard: the Tailwind `font-display` utility marks serif usage — never bold it */
+.font-display {
+  font-weight: 400;
 }
 
-/* Utility surface + effects */
+.display-serif {
+  font-family: var(--font-instrument), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 0.98;
+}
+
+.display-grot {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-stretch: 106%;
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
+}
+
+/* Surfaces — soft, large radius, ambient shadow, minimal borders */
 .card {
-  background: var(--color-card);
-  border: 1px solid var(--color-line);
-  border-radius: 0.9rem;
+  background: var(--color-graphite-soft);
+  border: 1px solid rgba(247, 245, 242, 0.07);
+  border-radius: 1.5rem;
 }
 
-.frost-shadow {
-  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5),
-    0 0 0 1px rgba(94, 145, 181, 0.06);
+.card-hover {
+  transition:
+    transform 0.4s cubic-bezier(0.22, 0.61, 0.21, 1),
+    border-color 0.4s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 168, 106, 0.35);
 }
 
-.ice-glow {
-  box-shadow: 0 0 28px rgba(94, 145, 181, 0.2);
+.card-light {
+  background: var(--color-limestone);
+  border: 1px solid rgba(18, 18, 18, 0.05);
+  border-radius: 1.5rem;
+}
+
+.lift {
+  box-shadow: 0 32px 80px -32px rgba(0, 0, 0, 0.65);
+}
+
+.lift-warm {
+  box-shadow: 0 32px 70px -30px rgba(74, 58, 36, 0.35);
+}
+
+/* Frosted glass — used where it earns its keep: the floating header */
+.glass {
+  background: color-mix(in srgb, var(--color-ink) 62%, transparent);
+  backdrop-filter: blur(18px) saturate(1.3);
+  -webkit-backdrop-filter: blur(18px) saturate(1.3);
+}
+
+/* Liquid glass — near-invisible frost with a gradient hairline border */
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%,
+    rgba(255, 255, 255, 0.45) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .divider {
@@ -132,68 +211,233 @@ h2 {
   );
 }
 
-/* Small light backing so the dark-navy logo emblem stays crisp on dark */
-.logo-chip {
-  background: var(--color-frost);
-  border-radius: 0.6rem;
+/*
+ * Buttons — sharp corners, thin borders, horizontal wipe hover.
+ * Primary is warm white on dark; ghost adapts to its context; .btn-dark
+ * carries the dark action on light sections.
+ */
+.btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  background: var(--color-limestone);
+  color: var(--color-ink);
+  padding: 1rem 2.25rem;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.3s ease;
 }
-
-/* Buttons */
-.btn-primary {
-  display: inline-block;
-  font-family: var(--font-inter), sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  background: var(--color-glacier);
-  color: #fff;
-  padding: 0.85rem 1.65rem;
-  border-radius: 0.55rem;
-  transition: background-color 0.18s ease;
+.btn-primary::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-bronze);
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
 }
 .btn-primary:hover {
-  background: var(--color-glacier-bright);
+  color: #fff;
+}
+.btn-primary:hover::after {
+  transform: translateX(0);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  background: var(--color-ink);
+  color: var(--color-limestone);
+  padding: 1rem 2.25rem;
+  border-radius: 3px;
+  border: 1px solid rgba(18, 18, 18, 0.2);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.3s ease;
+}
+.btn-dark::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-bronze);
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.btn-dark:hover {
+  color: #fff;
+}
+.btn-dark:hover::after {
+  transform: translateX(0);
 }
 
 .btn-ghost {
-  display: inline-block;
-  font-family: var(--font-inter), sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  color: var(--color-frost);
-  padding: 0.85rem 1.65rem;
-  border-radius: 0.55rem;
-  border: 1px solid var(--color-line);
-  transition: border-color 0.18s ease, background-color 0.18s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.01em;
+  color: inherit;
+  padding: 1rem 2.25rem;
+  border-radius: 3px;
+  border: 1px solid color-mix(in srgb, currentColor 28%, transparent);
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+.btn-ghost::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: currentColor;
+  transform: translateX(-101%);
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.18, 1);
 }
 .btn-ghost:hover {
-  border-color: var(--color-ice-dim);
-  background: var(--color-card-hover);
+  color: var(--color-ink);
+  border-color: transparent;
+}
+.btn-ghost:hover::after {
+  transform: translateX(0);
+}
+/* ghost on light sections: the wipe is dark, so the label flips light */
+.btn-ghost-light:hover {
+  color: var(--color-limestone);
 }
 
+/* Micro-labels — technical mono, uppercase, tracked out */
 .eyebrow {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-ice);
+  color: var(--color-champagne);
 }
 
-/* Form fields */
+.eyebrow-warm {
+  color: var(--color-bronze);
+}
+
+/* Oversized ghost-outline type (footer brand line) */
+.ghost-text {
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(247, 245, 242, 0.1);
+}
+
+/* Image zoom on hover — wrap any figure/card holding an <img> */
+.zoom {
+  overflow: hidden;
+}
+.zoom img {
+  transition: transform 1.2s cubic-bezier(0.22, 0.61, 0.21, 1);
+}
+.zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Entrance motion — subtle, one-shot, staggered in the hero */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: rise 1s cubic-bezier(0.22, 0.61, 0.21, 1) both;
+}
+.rise-d1 {
+  animation-delay: 0.1s;
+}
+.rise-d2 {
+  animation-delay: 0.22s;
+}
+.rise-d3 {
+  animation-delay: 0.34s;
+}
+.rise-d4 {
+  animation-delay: 0.48s;
+}
+
+/* Slow settle on the hero photograph */
+@keyframes hero-settle {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+.hero-settle {
+  animation: hero-settle 6s cubic-bezier(0.22, 0.61, 0.21, 1) both;
+}
+
+/* Scroll cue line */
+@keyframes cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+.scroll-cue {
+  animation: cue 2.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .hero-settle,
+  .scroll-cue {
+    animation: none !important;
+  }
+}
+
+/* Form fields — quiet dark wells with a bronze focus line */
 input,
 textarea {
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
 }
 input::placeholder,
 textarea::placeholder {
-  color: var(--color-slate-dim);
+  color: var(--color-faint);
 }
 
 a {

@@ -9,7 +9,7 @@
 export const SITE = {
   brand: "Calgary Cold Plunge",
   brandShort: "Calgary Cold Plunge",
-  tagline: "Cold therapy, built for Calgary.",
+  tagline: "Cold immersion, considered — built for Canadian winters.",
   domain: "calgarycoldplunge.ca",
   city: "Calgary",
   region: "Alberta",
@@ -139,4 +139,20 @@ export const PHOTOS = {
       alt: "Cedar exterior and the vented cabinet that houses the chiller",
     },
   ],
+};
+
+/**
+ * Art-directed lifestyle photography (large editorial placements).
+ * `heroDusk` is the provided backyard-at-dusk shot; the rest are generated
+ * to the same warm, architectural brief.
+ */
+export const LIFESTYLE = {
+  heroDusk: {
+    src: "/images/hero-backyard-dusk.jpg",
+    alt: "Cedar cold plunge on a Calgary backyard deck at dusk, city skyline glowing beyond the fence",
+  },
+  winterSteam: {
+    src: "/images/lifestyle-winter-steam.jpg",
+    alt: "Steam rising off the cold plunge in falling snow, warm lights along a cedar fence",
+  },
 };

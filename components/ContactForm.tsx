@@ -110,8 +110,8 @@ export function ContactForm() {
       />
 
       <label className="block">
-        <span className="font-heading text-sm font-medium text-slate">
-          Message <span className="text-slate-dim">(optional)</span>
+        <span className="text-sm font-medium text-muted">
+          Message <span className="text-faint">(optional)</span>
         </span>
         <textarea
           value={message}
@@ -121,17 +121,17 @@ export function ContactForm() {
           }}
           rows={4}
           placeholder="Tell us about your space, timeline, or any questions…"
-          className="mt-1.5 block w-full bg-bg-soft border border-line rounded-lg px-3.5 py-3 text-frost focus:outline-none focus:border-ice-dim transition-colors resize-y"
+          className="mt-1.5 block w-full bg-ink border border-line rounded-xl px-4 py-3 text-limestone focus:outline-none focus:border-bronze transition-colors resize-y"
         />
         {fieldErrors.message && (
-          <span className="block mt-1 text-cedar text-sm" role="alert">
+          <span className="block mt-1 text-copper text-sm" role="alert">
             {fieldErrors.message}
           </span>
         )}
       </label>
 
       {formError && (
-        <p className="text-cedar font-medium" role="alert">
+        <p className="text-copper font-medium" role="alert">
           {formError}
         </p>
       )}
@@ -144,7 +144,7 @@ export function ContactForm() {
         {status === "submitting" ? "Sending…" : "Send message"}
       </button>
 
-      <p className="text-sm text-slate-dim">
+      <p className="text-sm text-faint">
         By sending this, you agree to receive a text confirmation at the number
         above. Standard message rates may apply; reply STOP to opt out anytime.
       </p>
@@ -177,7 +177,7 @@ function Field({
 }: FieldProps) {
   return (
     <label className="block">
-      <span className="font-heading text-sm font-medium text-slate">
+      <span className="text-sm font-medium text-muted">
         {label}
       </span>
       <input
@@ -190,12 +190,12 @@ function Field({
         maxLength={maxLength}
         aria-invalid={error ? true : undefined}
         className={[
-          "mt-1.5 block w-full bg-bg-soft border rounded-lg px-3.5 py-3 text-frost focus:outline-none transition-colors",
-          error ? "border-cedar" : "border-line focus:border-ice-dim",
+          "mt-1.5 block w-full bg-ink border rounded-xl px-4 py-3 text-limestone focus:outline-none transition-colors",
+          error ? "border-copper" : "border-line focus:border-bronze",
         ].join(" ")}
       />
       {error && (
-        <span className="block mt-1 text-cedar text-sm" role="alert">
+        <span className="block mt-1 text-copper text-sm" role="alert">
           {error}
         </span>
       )}

@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <!-- Snowflake mark in the brand palette on Alpine Navy. Reads at 16px. -->
-  <rect width="32" height="32" rx="7" fill="#0b1822" />
-  <g stroke="#5e91b5" stroke-width="2" stroke-linecap="round">
-    <line x1="16" y1="6" x2="16" y2="26" />
-    <line x1="7.3" y1="11" x2="24.7" y2="21" />
-    <line x1="7.3" y1="21" x2="24.7" y2="11" />
+  <!-- Minimal snowflake in Champagne Gold on Midnight Black. Reads at 16px. -->
+  <rect width="32" height="32" rx="8" fill="#121212" />
+  <g stroke="#c9a86a" stroke-width="1.7" stroke-linecap="round">
+    <line x1="16" y1="7" x2="16" y2="25" />
+    <line x1="8.2" y1="11.5" x2="23.8" y2="20.5" />
+    <line x1="8.2" y1="20.5" x2="23.8" y2="11.5" />
   </g>
-  <g stroke="#8fbad8" stroke-width="1.6" stroke-linecap="round">
-    <line x1="16" y1="10" x2="13" y2="8" />
-    <line x1="16" y1="10" x2="19" y2="8" />
-    <line x1="16" y1="22" x2="13" y2="24" />
-    <line x1="16" y1="22" x2="19" y2="24" />
+  <g stroke="#c9a86a" stroke-width="1.3" stroke-linecap="round" opacity="0.75">
+    <line x1="16" y1="10.5" x2="13.6" y2="8.9" />
+    <line x1="16" y1="10.5" x2="18.4" y2="8.9" />
+    <line x1="16" y1="21.5" x2="13.6" y2="23.1" />
+    <line x1="16" y1="21.5" x2="18.4" y2="23.1" />
   </g>
 </svg>
